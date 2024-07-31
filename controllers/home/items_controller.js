@@ -139,7 +139,7 @@ const storage = multer.diskStorage({
    filename: (req, file, cb) => {
     const a = Date.now() + '-' + file.originalname;
      cb(null,a);
-       itemLink = `${process.env.IMAGELINK}/${a}}`
+       itemLink = `${process.env.IMAGELINK}/${a}`
    },
    
  });
