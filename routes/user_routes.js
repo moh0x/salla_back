@@ -7,7 +7,7 @@ const { verifyUser } = require('../utility/verify_role_user');
 const { verifyAdmin } = require('../utility/verify_role_admin');
 router.post('/register',body("email").isEmail().isLength({min:6,max:50}).withMessage("type valid email"),body("password").isString().isLength({min:8,max:30}).withMessage("type valid password"),body("phone").isMobilePhone().isLength({min:10,max:15}).withMessage("type valid phone number"),body("userName").isLength({min:6,max:30}).withMessage("type valid user name"),userControoler.registerFunc);
 
-router.patch('/verifyAccount',body("verifyCode").isString().isLength({min:1,max:5}),verifyToken,verifyUser,userControoler.confirmAccountFunc);
+router.patch('/verifyAccount',body("verifyCode").isString().isLength({min:1,max:5}),verifyToken,userControoler.confirmAccountFunc);
 router.get('/userInfo',verifyToken,verifyUser,userControoler.getUserInfo);
 router.patch('/resetPassword',body("resetPasswordCode").isString().isLength({min:1,max:5}),body('password').isString().isLength({min:8,max:30}),userControoler.resetPasswordFunc);
 
