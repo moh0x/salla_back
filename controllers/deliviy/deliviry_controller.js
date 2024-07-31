@@ -36,7 +36,7 @@ const registerFunc = async(req,res)=>{
              phone:req.body.phone,
              verifyCode:verifyCode,
      resetPasswordCode:0,
-     isAgree:false,
+     isAgree:true,
      isVerify:false,
      shipping:0,
      shippingTax:0,
