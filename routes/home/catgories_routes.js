@@ -5,7 +5,7 @@ const categoriesControoler = require('../../controllers/home/categories_controll
 const { verifyAdmin } = require('../../utility/verify_role_admin');
 const multer = require('multer');
 const { verifyUser } = require('../../utility/verify_role_user');
-router.get('/getAllCategories',verifyToken,verifyUser,categoriesControoler.getAllCategories);
+router.get('/getAllCategories',verifyToken,categoriesControoler.getAllCategories);
 router.get('/getAllCategoriesAdmin',verifyToken,verifyAdmin,categoriesControoler.getAllCategoriesAdmin);
 router.delete('/admin/delete',verifyToken,verifyAdmin,categoriesControoler.deleteCategoryAdmin);
 router.post('/admin/addCategoryImage',verifyToken,verifyAdmin,categoriesControoler.catUpload.single('image'),categoriesControoler.addCategoryImage);
